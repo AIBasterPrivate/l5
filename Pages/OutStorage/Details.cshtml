@@ -1,0 +1,43 @@
+﻿@page
+@model l5.Pages.OutStorage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BookOutOfStorage</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookOutOfStorage.BookTakeDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookOutOfStorage.BookTakeDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookOutOfStorage.BookReturnDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookOutOfStorage.BookReturnDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookOutOfStorage.Person)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookOutOfStorage.Person.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookOutOfStorage.Book)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookOutOfStorage.Book.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BookOutOfStorage?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

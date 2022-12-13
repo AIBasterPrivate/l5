@@ -1,0 +1,47 @@
+﻿@page
+@model l5.Pages.OutStorage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BookOutOfStorage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookOutOfStorage.PersonId" class="control-label"></label>
+                <select asp-for="BookOutOfStorage.PersonId" class ="form-control" asp-items="ViewBag.PersonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookOutOfStorage.BookId" class="control-label"></label>
+                <select asp-for="BookOutOfStorage.BookId" class ="form-control" asp-items="ViewBag.BookId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookOutOfStorage.BookTakeDate" class="control-label"></label>
+                <input asp-for="BookOutOfStorage.BookTakeDate" class="form-control" />
+                <span asp-validation-for="BookOutOfStorage.BookTakeDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookOutOfStorage.BookReturnDate" class="control-label"></label>
+                <input asp-for="BookOutOfStorage.BookReturnDate" class="form-control" />
+                <span asp-validation-for="BookOutOfStorage.BookReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
